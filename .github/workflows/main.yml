@@ -24,5 +24,5 @@ jobs:
             owner: context.repo.owner,
             repo: context.repo.repo,
             title: 'Issue tự động',
-            body: 'Đây là issue được tạo tự động vào lúc 2h sáng. @username, vui lòng kiểm tra.',
+            body: 'Đây là issue được tạo tự động vào lúc 2h sáng. @dhhospital, vui lòng kiểm tra.',
           });
