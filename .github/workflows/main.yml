@@ -1,15 +1,20 @@
+name: Create Issue at 2 AM
+
+on:
+  schedule:
+    # Định giờ chạy lúc 2h sáng hàng ngày
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Cho phép khởi chạy thủ công
+
 jobs:
   create_issue:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
     - name: Create Issue
       uses: actions/github-script@v6
       with:
-        github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # Sử dụng PAT lưu trong GitHub Secrets
         script: |
           await github.rest.issues.create({
             owner: context.repo.owner,
